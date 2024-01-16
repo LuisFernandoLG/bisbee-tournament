@@ -1,0 +1,71 @@
+<div class="header">
+  <div class="logo">
+    <a href="/"> B</a>
+  </div>
+
+  <nav>
+    <ul class="nav">
+      <li><a class="nav__item" href="/">Home</a></li>
+      <li><a class="nav__item" href="/ranking">Ranking</a></li>
+      <li><a class="nav__item" href="/about">About</a></li>
+    </ul>
+  </nav>
+</div>
+
+<style scoped>
+  .header {
+    width: 100%;
+    position: sticky;
+
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+
+    background: transparent;
+    animation: bg linear forwards;
+    animation-timeline: scroll();
+  }
+
+  @keyframes bg {
+    20% {
+      background: #fff;
+      box-shadow: 1px 8px 83px -28px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 1px 8px 83px -28px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 1px 8px 83px -28px rgba(0, 0, 0, 0.75);
+    }
+    100% {
+      background: #fff;
+      box-shadow: 1px 8px 83px -28px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 1px 8px 83px -28px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 1px 8px 83px -28px rgba(0, 0, 0, 0.75);
+    }
+  }
+
+  .logo, .nav{
+    padding: 0.5rem 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+
+  .nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .nav__item {
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+</style>

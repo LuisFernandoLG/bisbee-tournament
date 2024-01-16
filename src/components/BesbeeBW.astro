@@ -1,0 +1,134 @@
+---
+import marlin2Image from "../assets/images/marlin4.png";
+import bgMarlin2Image from "../assets/images/bg-marlin-2.png";
+import { Image } from "astro:assets";
+import Chip from "./Chip.astro";
+
+import calendarImage from "../assets/icons/calendar.png";
+import location from "../assets/icons/location.png";
+---
+
+<div class="tournament-card">
+  <h2 class="heroContainer__title">
+    Bisbee’s Black <br /> And Blue
+  </h2>
+  <div class="heroContainer__divider"></div>
+  <div class="meta-data">
+    <Chip content="07/12/2024" icon={calendarImage.src} />
+    <Chip content="Chula vista" icon={location.src} />
+  </div>
+  <div class="info">
+    <p class="heroContainer__description">
+      The Black & Blue Marlin Tournament is also an occasion that unites the Cabo community. About 150 teams compete in the tournament. The fish caught by the participants is measured in Puerto Paraiso Entertainment Plaza. So anyone can come to view this spectacle. Also, lots of people gather at Cabo San Lucas Marina to feast on street food.
+    </p>
+    <div class="imageContainer">
+      <Image src={bgMarlin2Image} alt="" class="imagteContainer__bgMarlin" />
+      <Image src={marlin2Image} alt="" class="imagteContainer__marlin" />
+    </div>
+  </div>
+</div>
+
+<style scoped>
+  .tournament-card {
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+  }
+
+  .heroContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 40%;
+    max-width: 40%;
+  }
+
+  .heroContainer__title {
+    font-size: 4rem;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1;
+    margin: 0;
+    text-align: center;
+  }
+
+  .heroContainer__divider {
+    width: 60%;
+    height: 0.5rem;
+    background-color: #000;
+    margin: 1rem 0;
+  }
+
+  .heroContainer__description {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 1rem 0;
+
+    max-width: 70%;
+  }
+
+  .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .info p {
+    max-width: 40%;
+  }
+
+  .meta-data {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .imageContainer {
+    position: relative;
+    width: 30%;
+    height: 50vh;
+    padding: 2rem;
+    max-width: 40%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imagteContainer__bgMarlin {
+    position: sticky;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    scale: 1;
+    /* center */
+    animation: balancingx 4s ease-in-out 1s alternate infinite;
+  }
+
+  .imagteContainer__marlin {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    position: absolute;
+    scale: 1.2;
+
+    animation: balancingx 4s ease-in-out alternate infinite;
+  }
+
+  @keyframes balancingx {
+    0% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(0deg);
+      scale: 1.2;
+    }
+  }
+</style>

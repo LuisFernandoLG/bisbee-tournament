@@ -1,0 +1,131 @@
+---
+import marlin2Image from "../assets/images/marlin2.png";
+import bgMarlin2Image from "../assets/images/bg-marlin-2.png";
+import { Image } from "astro:assets";
+import Chip from "./Chip.astro";
+
+import calendarImage from "../assets/icons/calendar.png";
+import location from "../assets/icons/location.png";
+---
+
+<div class="tournament-card">
+  <div class="heroContainer">
+    <h2 class="heroContainer__title">
+      Bisbee’s East <br/> Cape Offshore
+    </h2>
+    <div class="heroContainer__divider"></div>
+    <div class="meta-data">
+      <Chip content="07/12/2024" icon={calendarImage.src} />
+      <Chip content="Chula vista" icon={location.src} />
+    </div>
+    <p class="heroContainer__description">
+      East Cape Offshore is the most expensive tournament in the region, as the
+      prizes can hit $600,000. Here teams compete for the heaviest marlin,
+      dorado, and tuna. The action takes place at Buena Vista Resort.
+    </p>
+  </div>
+  <div class="imageContainer">
+    <Image src={bgMarlin2Image} alt="" class="imagteContainer__bgMarlin" />
+    <Image src={marlin2Image} alt="" class="imagteContainer__marlin" />
+  </div>
+</div>
+<style scoped>
+  .tournament-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heroContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 50%;
+    max-width: 50%;
+  }
+
+  .heroContainer__title {
+    font-size: 4rem;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .heroContainer__divider {
+    width: 60%;
+    height: 0.5rem;
+    background-color: #000;
+    margin: 1rem 0;
+  }
+
+  .heroContainer__description {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 1rem 0;
+
+    max-width: 70%;
+  }
+
+  .meta-data {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .imageContainer {
+    position: relative;
+    width: 30%;
+    height: 50vh;
+    padding: 2rem;
+    max-width: 40%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imagteContainer__bgMarlin {
+    position: sticky;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    scale: 1;
+    animation: balancingEast 6s ease 2s alternate infinite;
+    /* center */
+  }
+
+  .imagteContainer__marlin {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    position: absolute;
+
+    animation: balancingEast 4s ease-in-out alternate infinite;
+  }
+
+  @keyframes balancingEast {
+    0% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0deg) scale(1.2);
+    }
+  }
+
+  @keyframes myAnim {
+    0% {
+      transform: scale(0);
+      transform-origin: 50% 100%;
+    }
+
+    100% {
+      transform: scale(1);
+      transform-origin: 50% 100%;
+    }
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+import Leaderboard from "../components/Leaderboard.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="ranking">
+  <div class="container">
+    <h1 class="title-page">Leaderboard</h1>
+    <Leaderboard />
+  </div>
+</Layout>
+
+<style scoped>
+  .container {
+    background: rgb(175, 205, 247);
+    background: linear-gradient(
+      173deg,
+      rgba(175, 205, 247, 1) 0%,
+      rgba(107, 153, 226, 1) 100%
+    );
+    min-height: 100vh;
+  }
+
+  .title-page {
+    font-size: 3rem;
+    margin-left: 2rem;
+    padding: 1rem;
+    text-decoration: underline;
+  }
+</style>

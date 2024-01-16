@@ -1,0 +1,163 @@
+---
+import { Image } from "astro:assets";
+import footerShadowsImage from "../assets/images/footer-shadow.png";
+import seaImage from "../assets/images/sea.png";
+import skyImage from "../assets/images/sky.png";
+import hookImage from "../assets/images/hook.png";
+---
+
+<div class="homeHeroSecion">
+  <Image src={hookImage} alt="hook1" class="hook1" />
+  <Image src={hookImage} alt="hook2" class="hook2" />
+  <Image src={hookImage} alt="hook3" class="hook3" />
+
+  <Image src={skyImage} alt="sky" class="sky" />
+  <Image src={seaImage} alt="sea" class="sea" />
+  <Image src={footerShadowsImage} alt="shadow" class="shadow" />
+  <div class="hero-title">
+    <h1>
+      Bisbee <br /> Tournament
+    </h1>
+    <p>The worlds richest fishing tournaments.</p>
+  </div>
+ 
+</div>
+
+<style scoped>
+  .homeHeroSecion {
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    background: #fff;
+    top: -5rem;
+
+  }
+  
+  .sky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .sea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    bottom: 0;
+    z-index: 300;
+    animation: hiding-all ease;
+    animation-timeline: scroll();
+
+  }
+
+  .shadow {
+    position: absolute;
+    bottom: 0;
+    z-index: 600;
+    width: 100%;
+    height: 100%;
+    transform: translateY(5px);
+
+    animation: hiding-all ease;
+    animation-timeline: scroll();
+  }
+  
+  @keyframes hiding-all{
+    100%{      
+      bottom: 100%;
+      scale: 2 2.2;
+    }
+  }
+
+  
+  .hook1 {
+    position: absolute;
+    
+    width: 10rem;
+    height: auto;
+    z-index: 50;
+    object-fit: scale-down;
+    /* center */
+    top: 0rem;
+    left: 80%;
+    /* transform: translate(-50%, -50%); */
+    animation: hook-animation 1.5s ease-in-out 300ms infinite alternate;
+  }
+
+  .hook2 {
+    position: absolute;
+    
+    width: 7rem;
+    height: auto;
+    z-index: 50;
+    object-fit: scale-down;
+    /* center */
+    top: 0rem;
+    left: 20%;
+    /* transform: translate(-50%, -50%); */
+    animation: hook-animation 1s ease-in-out infinite alternate;
+  }
+
+  .hook3 {
+    position: absolute;
+    
+    width: 5rem;
+    height: auto;
+    z-index: 50;
+    object-fit: scale-down;
+    /* center */
+    top: 0rem;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    animation: hook-animation 1.2s ease-in-out 100ms infinite alternate;
+  }
+
+
+
+  @keyframes hook-animation {
+    0% {
+      transform: rotate(-5deg);
+    }
+
+    100% {
+      transform: rotate(5deg);
+    }
+  }
+
+  .hero-title {
+    position: absolute;
+    /* center */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 100;
+  }
+
+  .hero-title h1 {
+    color: #065979;
+    font-size: 6em;
+    line-height: 0.7;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .hero-title p {
+    color: #26BCFF;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+
+
+  @media (max-width: 768px) {
+    .homeHeroSecion {
+      font-size: 10px;
+    }
+
+  }
+
+</style>

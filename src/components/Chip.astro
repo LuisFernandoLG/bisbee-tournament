@@ -1,0 +1,40 @@
+---
+import {Image} from "astro:assets"
+interface Props {
+    icon?: string,
+    content: string
+}
+
+
+
+const {icon, content} = Astro.props
+
+---
+
+<div class="chip">
+    {icon && <img class="chip__icon" src={icon} alt={content}/> }
+    <span class="chip__content">{content}</span>
+</div>
+
+<style scoped>
+.chip{
+    background: #D9D9D9;
+    border-radius: 2rem;
+    padding: 0.5rem 0.8rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.chip__icon{
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.chip__content{
+    font-weight: 700;
+}
+
+</style>

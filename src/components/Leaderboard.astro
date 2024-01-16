@@ -1,0 +1,27 @@
+---
+import LeaderboardItem from "./LeaderboardItem.astro";
+import mxImage from "../assets/images/mexico.png"
+import usaImage from "../assets/images/german.png"
+import germanImage from "../assets/images/usa.png"
+
+---
+
+<div class="leaderboard">
+  <LeaderboardItem image={mxImage.src} name="Team One" number="1"/>
+  <LeaderboardItem image={usaImage.src} name="Team Two" number="2"/>
+  <LeaderboardItem image={germanImage.src} name="Team Three" number="3"/>
+</div>
+
+<style scoped>
+  .leaderboard {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    max-width: 80%;
+    margin: 3rem auto;
+    gap: 1rem;
+
+  }
+
+  
+</style>

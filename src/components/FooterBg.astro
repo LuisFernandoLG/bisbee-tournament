@@ -1,0 +1,28 @@
+---
+import footerShadowsImage from "../assets/images/footer-shadow.png";
+
+import bgImage from "../assets/images/background-footer.png"
+import {Image} from "astro:assets"
+---
+
+<div class="bg">
+<Image src={bgImage} class="boats" alt="background wiht boats"/>
+</div>
+
+
+<style scoped>
+    .bg{
+        margin-top: 10rem;
+        width: 100%;
+        height: 100vh;
+    }
+
+
+    .boats{
+        width: 100%;
+        height: 100%;
+        object-fit: cover cover;
+
+        
+    }
+</style>

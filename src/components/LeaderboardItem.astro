@@ -1,0 +1,56 @@
+---
+
+interface Props {
+  number: string;
+  name: string;
+  image: string;
+}
+
+const { number, name, image } = Astro.props;
+---
+
+<div class="item">
+  <span class="number">{number}</span>
+  <h2 class="name">{name}</h2>
+  <img class="flag" src={image} alt="mx" />
+</div>
+
+<style scoped>
+  .item {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    background:#fff;
+  }
+
+  .item .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    font-weight: 800;
+
+    background: #d7f2f9;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5rem;
+  }
+
+  .name {
+    font-size: 2rem;
+    flex-grow: 1;
+    font-style: italic;
+  }
+
+  .flag {
+    width: 4em;
+    height: 4em;
+    object-fit: contain;
+  }
+</style>
