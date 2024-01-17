@@ -44,11 +44,11 @@
   }
 
   .logo, .nav{
-    padding: 0.5rem 1.5rem;
+    padding: 0.5em 1.5em;
   }
 
   .logo {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     font-weight: 800;
   }
 
@@ -59,13 +59,21 @@
 
   .nav {
     display: flex;
-    gap: 1rem;
+    gap: 1em;
   }
 
   .nav__item {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     font-weight: 800;
     text-decoration: none;
     color: var(--primary-color);
   }
+
+  @media (width >= 1600px) {
+    .header {
+      font-size: 30px;
+    }
+
+  
+}
 </style>
