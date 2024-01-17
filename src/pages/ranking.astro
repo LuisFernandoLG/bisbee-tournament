@@ -22,9 +22,16 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .title-page {
-    font-size: 3rem;
-    margin-left: 2rem;
-    padding: 1rem;
+    font-size: 3em;
+    margin-left: 2em;
+    padding: 1em;
     text-decoration: underline;
   }
+
+
+  @media (width <= 600px) {
+  .container{
+    font-size: 10px;
+  }
+}
 </style>

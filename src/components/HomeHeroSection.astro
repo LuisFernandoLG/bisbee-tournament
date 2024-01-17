@@ -26,7 +26,7 @@ import hookImage from "../assets/images/hook.png";
 <style scoped>
   .homeHeroSecion {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100dvh;
     background: #fff;
     top: -5rem;
@@ -66,8 +66,7 @@ import hookImage from "../assets/images/hook.png";
   
   @keyframes hiding-all{
     100%{      
-      bottom: 100%;
-      scale: 2 2.2;
+    transform: translateY(-1000px);
     }
   }
 
@@ -75,13 +74,13 @@ import hookImage from "../assets/images/hook.png";
   .hook1 {
     position: absolute;
     
-    width: 10rem;
+    width: 6rem;
     height: auto;
     z-index: 50;
     object-fit: scale-down;
     /* center */
-    top: 0rem;
-    left: 80%;
+    top: 0em;
+    left: 70%;
     /* transform: translate(-50%, -50%); */
     animation: hook-animation 1.5s ease-in-out 300ms infinite alternate;
   }
@@ -94,7 +93,7 @@ import hookImage from "../assets/images/hook.png";
     z-index: 50;
     object-fit: scale-down;
     /* center */
-    top: 0rem;
+    top: 0em;
     left: 20%;
     /* transform: translate(-50%, -50%); */
     animation: hook-animation 1s ease-in-out infinite alternate;
@@ -153,11 +152,18 @@ import hookImage from "../assets/images/hook.png";
   
 
 
-  @media (max-width: 768px) {
+  @media (width <= 600px) {
     .homeHeroSecion {
       font-size: 10px;
     }
-
   }
+  
+  @media (width >= 1600px) {
+    .homeHeroSecion {
+      font-size: 20px;
+    }
+
+  
+}
 
 </style>
