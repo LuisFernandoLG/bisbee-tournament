@@ -24,7 +24,7 @@ jobs:
     - name: Build project
       run: npm run build
 
-    - name: Transfer to server
+    - name: Transfer to server again
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.SSH_HOST }}
