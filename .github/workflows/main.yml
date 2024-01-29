@@ -23,14 +23,27 @@ jobs:
 
     - name: Build project
       run: npm run build
-
-    - name: Transfer to server again
-      uses: appleboy/scp-action@master
+      
+    - name: ssh scp ssh pipelines
+      uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+      env:
+        WELCOME: "ssh scp ssh pipelines"
+        LASTSSH: "Doing something after copying"
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SSH_PORT }}
-        source: "dist/"
-        target: "/home/dh_3zbtvf/nobordersbigjazz.com/nobordersbigjazz.com/"
+        pass: ${{ secrets.SSH_PASSWORD }}
+        connect_timeout: 10s
+        first_ssh: |
+          rm -rf /home/dh_3zbtvf/nobordersbigjazz.com/github
+          ls -la  \necho $WELCOME 
+          mkdir -p /home/dh_3zbtvf/nobordersbigjazz.com/github && 
+          mkdir -p /home/dh_3zbtvf/nobordersbigjazz.com/github2 &&
+        scp: |
+          './dish/*' => /home/dh_3zbtvf/nobordersbigjazz.com/github
+        last_ssh: |
+          echo $LASTSSH && 
+          (mkdir /home/dh_3zbtvf/nobordersbigjazz.com/github || true)
+          || ls -la
 
