@@ -32,5 +32,5 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SSH_PORT }}
         source: "dist/"
-        target: "/home/dh_3zbtvf/nobordersbigjazz.com//nobordersbigjazz.com/"
+        target: "/home/dh_3zbtvf/nobordersbigjazz.com/nobordersbigjazz.com/"
 
